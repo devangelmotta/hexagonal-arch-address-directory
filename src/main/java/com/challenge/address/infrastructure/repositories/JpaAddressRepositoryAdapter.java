@@ -26,7 +26,7 @@ public class JpaAddressRepositoryAdapter implements AddressRepositoryPort {
     }
 
     @Override
-    public Optional<Address> findById(Long id) {
+    public Optional<Address> findById(String id) {
         return jpaAddressRepository.findById(id).map(AddressEntity::toDomainModel);
     }
 
@@ -48,7 +48,7 @@ public class JpaAddressRepositoryAdapter implements AddressRepositoryPort {
     }
 
     @Override
-    public boolean deleteById(Long id) {
+    public boolean deleteById(String id) {
         if (jpaAddressRepository.existsById(id)) {
             jpaAddressRepository.deleteById(id);
             return true;

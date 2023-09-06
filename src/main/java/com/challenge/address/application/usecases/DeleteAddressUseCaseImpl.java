@@ -12,7 +12,7 @@ public class DeleteAddressUseCaseImpl implements DeleteAddressUseCase {
     }
 
     @Override
-    public boolean deleteAddress(Long id) {
+    public boolean deleteAddress(String id) {
         return addressRepositoryPort.deleteById(id);
     }
 }

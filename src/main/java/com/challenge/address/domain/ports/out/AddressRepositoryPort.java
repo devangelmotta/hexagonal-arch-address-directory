@@ -7,8 +7,8 @@ import java.util.Optional;
 
 public interface AddressRepositoryPort {
     Address save(Address address);
-    Optional<Address> findById(Long id);
+    Optional<Address> findById(String id);
     List<Address> findAll();
     Optional<Address> update(Address address);
-    boolean deleteById(Long id);
+    boolean deleteById(String id);
 }

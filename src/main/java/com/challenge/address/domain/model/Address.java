@@ -1,14 +1,20 @@
 package com.challenge.address.domain.model;
 
-public class Address {
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 
-    private Long id;
+public class Address {
+    private String id;
+    @NotBlank(message = "Name is mandatory")
     private String name;
+    @NotBlank(message = "Lastname is mandatory")
     private String lastName;
+    @NotBlank(message = "Phone number is mandatory")
+    @Pattern(regexp = "^\\+57\\d{7}$", message = "Invalid phone number")
     private String phone;
     private String comuna;
 
-    public Address(Long id, String name, String lastName, String phone, String comuna) {
+    public Address(String id, String name, String lastName, String phone, String comuna) {
         this.id = id;
         this.name = name;
         this.lastName = lastName;
@@ -16,11 +22,11 @@ public class Address {
         this.comuna = comuna;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
