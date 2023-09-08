@@ -6,6 +6,6 @@ import java.util.List;
 import java.util.Optional;
 
 public interface RetrieveAddressUseCase {
-    Optional<Address> getAddressById(String id);
+    Optional<Address> getAddressById(Long id);
     List<Address> getAllAddress();
 }

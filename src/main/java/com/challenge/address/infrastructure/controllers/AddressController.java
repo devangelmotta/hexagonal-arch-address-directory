@@ -28,7 +28,7 @@ public class AddressController {
     }
     @CrossOrigin
     @GetMapping("/{addressId}")
-    public ResponseEntity<Address> getAddressById(@PathVariable String addressId) {
+    public ResponseEntity<Address> getAddressById(@PathVariable Long addressId) {
         return addressService.getAddressById(addressId)
                 .map(address -> new ResponseEntity<>(address, HttpStatus.OK))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
@@ -41,14 +41,14 @@ public class AddressController {
     }
     @CrossOrigin
     @PutMapping("/{addressId}")
-    public ResponseEntity<Address> updateAddress(@PathVariable String addressId, @RequestBody Address updatedAddress) {
+    public ResponseEntity<Address> updateAddress(@PathVariable Long addressId, @RequestBody Address updatedAddress) {
         return addressService.updateAddress(addressId, updatedAddress)
                 .map(address -> new ResponseEntity<>(address, HttpStatus.OK))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
     @CrossOrigin
     @DeleteMapping("/{addressId}")
-    public ResponseEntity<Void> deleteAddressById(@PathVariable String addressId) {
+    public ResponseEntity<Void> deleteAddressById(@PathVariable Long addressId) {
         if (addressService.deleteAddress(addressId)) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } else {

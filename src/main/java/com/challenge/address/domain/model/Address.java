@@ -4,7 +4,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
 public class Address {
-    private String id;
+    private Long id;
     @NotBlank(message = "Name is mandatory")
     private String name;
     @NotBlank(message = "Lastname is mandatory")
@@ -14,7 +14,7 @@ public class Address {
     private String phone;
     private String comuna;
 
-    public Address(String id, String name, String lastName, String phone, String comuna) {
+    public Address(Long id, String name, String lastName, String phone, String comuna) {
         this.id = id;
         this.name = name;
         this.lastName = lastName;
@@ -22,11 +22,11 @@ public class Address {
         this.comuna = comuna;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

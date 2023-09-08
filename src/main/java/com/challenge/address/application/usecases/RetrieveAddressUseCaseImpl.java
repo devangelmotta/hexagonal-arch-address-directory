@@ -16,7 +16,7 @@ public class RetrieveAddressUseCaseImpl implements RetrieveAddressUseCase {
     }
 
     @Override
-    public Optional<Address> getAddressById(String id) {
+    public Optional<Address> getAddressById(Long id) {
         return addressRepositoryPort.findById(id);
     }
 

@@ -15,7 +15,7 @@ public class UpdateAddressUseCaseImpl implements UpdateAddressUseCase {
     }
 
     @Override
-    public Optional<Address> updateAddress(String id, Address updatedAddress) {
+    public Optional<Address> updateAddress(Long id, Address updatedAddress) {
         return addressRepositoryPort.update(updatedAddress);
     }
 }

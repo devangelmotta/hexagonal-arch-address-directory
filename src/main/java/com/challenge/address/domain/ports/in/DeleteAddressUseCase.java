@@ -1,5 +1,5 @@
 package com.challenge.address.domain.ports.in;
 
 public interface DeleteAddressUseCase {
-    boolean deleteAddress(String id);
+    boolean deleteAddress(Long id);
 }

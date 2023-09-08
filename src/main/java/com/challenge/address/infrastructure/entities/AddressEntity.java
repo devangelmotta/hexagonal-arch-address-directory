@@ -11,7 +11,7 @@ public class AddressEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Long id;
     private String name;
     private String lastName;
     private String phone;
@@ -20,7 +20,7 @@ public class AddressEntity {
     public AddressEntity() {
     }
 
-    public AddressEntity(String id, String name, String lastName, String  phone, String comuna) {
+    public AddressEntity(Long id, String name, String lastName, String  phone, String comuna) {
         this.id = id;
         this.name = name;
         this.lastName = lastName;
@@ -36,11 +36,11 @@ public class AddressEntity {
         return new Address(id, name, lastName, phone, comuna);
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

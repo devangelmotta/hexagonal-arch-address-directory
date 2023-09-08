@@ -5,5 +5,5 @@ import com.challenge.address.domain.model.Address;
 import java.util.Optional;
 
 public interface UpdateAddressUseCase {
-    Optional<Address> updateAddress(String id, Address updatedAddress);
+    Optional<Address> updateAddress(Long id, Address updatedAddress);
 }

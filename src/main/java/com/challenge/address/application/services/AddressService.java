@@ -35,7 +35,7 @@ public class AddressService implements CreateAddressUseCase, RetrieveAddressUseC
     }
 
     @Override
-    public Optional<Address> getAddressById(String id) {
+    public Optional<Address> getAddressById(Long id) {
         return retrieveAddressUseCase.getAddressById(id);
     }
 
@@ -45,12 +45,12 @@ public class AddressService implements CreateAddressUseCase, RetrieveAddressUseC
     }
 
     @Override
-    public Optional<Address> updateAddress(String id, Address updatedAddress) {
+    public Optional<Address> updateAddress(Long id, Address updatedAddress) {
         return updateAddressUseCase.updateAddress(id, updatedAddress);
     }
 
     @Override
-    public boolean deleteAddress(String id) {
+    public boolean deleteAddress(Long id) {
         return deleteAddressUseCase.deleteAddress(id);
     }
 
